@@ -1,7 +1,7 @@
 {
-  "name": "asos-api",
+  "name": "integrationfields_scraper",
   "version": "0.1.0",
-  "description": "asos api",
+  "description": "integrationfields_scraper",
   "engines": {
     "node": "6.11.1"
   },
@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arnaudlewis/asos-api.git"
+    "url": "https://github.com/arnaudlewis/integrationfields_scraper.git"
   },
   "keywords": [
     "node",

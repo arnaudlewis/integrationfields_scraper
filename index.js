@@ -39,9 +39,9 @@ DB.connect((db) => {
       results: results.filter(r => !r.className).map(result => {
         return {
           id: result._id,
-          title: result.title,
-          description : result.description,
-          image_url : result.image_url,
+          title: result.title || '',
+          description : result.description || '',
+          image_url : result.image_url || '',
           last_update : new Date(result.last_update).getTime(), //optional timestamp
           blob: result.blob
         }
