@@ -1,0 +1,37 @@
+{
+  "name": "asos-api",
+  "version": "0.1.0",
+  "description": "asos api",
+  "engines": {
+    "node": "6.11.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "basic-auth": "^2.0.0",
+    "cheerio": "1.0.0-rc.2",
+    "cookie-parser": "^1.4.3",
+    "express": "4.15.3",
+    "express-paginate": "^0.3.0",
+    "moment": "^2.18.1",
+    "moment-timezone": "^0.5.13",
+    "mongodb": "^2.2.30",
+    "request": "^2.81.0",
+    "serve-favicon": "^2.4.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arnaudlewis/asos-api.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT",
+  "devDependencies": {},
+  "author": "arnaudlewis"
+}
