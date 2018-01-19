@@ -63,14 +63,16 @@ DB.connect((db) => {
     const PAGE_SIZE = 50;
     const page = req.query.page || 1;
 
-    db.collection(DB.Collections.Products)
-    .find()
-    .skip(PAGE_SIZE * (page - 1))
-    .limit(PAGE_SIZE)
-    .sort({date:-1})
-    .toArray((err, results) => {
-      if (err) throw err;
-      res.send(prismicFormat(results, results.length));
+    const total = db.collection(DB.Collections.Products).count(count => {
+      db.collection(DB.Collections.Products)
+      .find()
+      .skip(PAGE_SIZE * (page - 1))
+      .limit(PAGE_SIZE)
+      .sort({date:-1})
+      .toArray((err, results) => {
+        if (err) throw err;
+        res.send(prismicFormat(results, count));
+      });
     });
   });
 
