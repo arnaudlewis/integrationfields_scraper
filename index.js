@@ -63,7 +63,7 @@ DB.connect((db) => {
     const PAGE_SIZE = 50;
     const page = req.query.page || 1;
 
-    const total = db.collection(DB.Collections.Products).count(count => {
+    const count = db.collection(DB.Collections.Products).count().then((count) => {
       db.collection(DB.Collections.Products)
       .find()
       .skip(PAGE_SIZE * (page - 1))
@@ -73,7 +73,7 @@ DB.connect((db) => {
         if (err) throw err;
         res.send(prismicFormat(results, count));
       });
-    });
+    })
   });
 
   app.get('/api/:total', function (req, res) {
